@@ -9,7 +9,7 @@
 	<div class="container">
 		<h1 class="text-center"> Window Registration Form </h1>
 		<div class="col-md-6" style="margin: auto">
-		<form id="myform" action="insertphp.php" method="post">
+		<form id="myform" action="insert.php" method="post">
 			<div class="form-group">
 				<label>title:</label>
 				<input type="text" name="title" id="title" class="form-control" placeholder="enter title..">
@@ -29,8 +29,8 @@
 		</form>
 		<br>
 		<br>
-		<div style="background-color: black;text-align: center;text-transform: uppercase;border-radius: 1em">
-		<a href="display.php" > view photos </a>
+		<div style="background-color: black;text-align: center;text-transform: uppercase;border-radius: 1em;">
+		<a href="display.php" style="color: white;" > view photos </a>
 	</div>
 		<br>
 		<br>

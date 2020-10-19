@@ -73,11 +73,11 @@
             	console.log(postData.data.length,"is the lenth")
             	if(postData.data.length == 6){
             		for(var i=0;i<=5;i++){
-            			appn+= "<div class='thumbnail col-md-4 col-xs-2'>"+
-				               "<img style='padding:5px;' width=250px height=200px src ="+ postData.data[i].image+">"+
+            			appn+= "<div class='thumbnail col-lg-4  col-sm-6'>"+
+				               "<img style='margin:5px;' width=280px height=200px src ="+ postData.data[i].image+">"+
 				               "<div class='caption' style='text-align: center;'>"+
-					           "<p id='text'>"+postData.data[i].title+"</p>"+
-					           "<p id='text'>"+postData.data[i].description+"</p>"+
+					           "<p>"+postData.data[i].title+"</p>"+
+					           "<p>"+postData.data[i].description+"</p>"+
  								"</div>"+
 								"</div>"
 						$("#imgDiv").html(appn);
@@ -87,19 +87,19 @@
             }
         	})
 		}
-		var queueImages = function(off){
+		var queueImages = function(offset){
 			console.log("queue button was clicked");
 			$.ajax({
             type: 'POST',
             url: "queue.php",
-            data: {'offset':off},
+            data: {'offset':offset},
             dataType: "text",
             success: function(res) {
             	var poData = JSON.parse(res)
             	var appn2=" ";
-            	console.log(off);
+            	console.log(offset);
             	console.log(poData.data.length,"is the lenth")
-            		for(var i=off+6;i<=poData.data.length+1;i++){
+            		for(var i=offset+6;i<=poData.data.length+1;i++){
             			if(i=== (poData.data.length)){
 							appn2+="<div class='container'>"+"<h2>END OF QUEUE</h2>"+"</div>"
 							$("#queue").html(appn2);
@@ -107,7 +107,7 @@
 						console.log(i ,"  :value of i")
             			appn2+= "<div class='thumbnail col-md-1 col-xs-4'>"+
 				               "<img style='padding:10px' width='250px' height='200px'  src ="+ poData.data[i].image+">"+
-				               "<div class='caption' style='text-align: center;margin-left:5px'>"+
+				               "<div  style='margin-left:5px'>"+
 					           "<p id='text'>"+poData.data[i].title+"</p>"+
 					           "<p id='text'>"+poData.data[i].description+"</p>"+
  								"</div>"+
